@@ -1,0 +1,32 @@
+# Backend Framework
+fastapi
+uvicorn
+
+# Streamlit for Frontend UI
+streamlit
+
+# Data Science & Visualization
+numpy
+pandas
+scipy
+matplotlib
+seaborn
+
+# API Requests
+requests
+
+# CrewAI for AI Agents
+crewai
+crewai-tools
+
+# YouTube API (for Video Recommendations)
+google-api-python-client
+
+# Environment Variable Handling
+python-dotenv
+groq
+
+langchain
+faiss-cpu
+google-generativeai
+sentence-transformers
