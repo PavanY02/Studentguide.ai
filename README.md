@@ -1,13 +1,13 @@
 # Student Guider AI - Quiz Analysis System
 
 ## 📌 Project Overview
-The **Student Guider AI** is an intelligent system designed to analyze student quiz performances, providing AI-powered insights into their strengths and areas for improvement. The system processes quiz data, evaluates student answers, and leverages **LangChain** and **Google Gemini AI** to generate feedback based on quiz results.
+The **Student Guider AI** is an intelligent system designed to analyze student quiz performances, providing AI-powered insights into their strengths and areas for improvement. The system processes quiz data, evaluates student answers, and leverages **Crewai**, **LangChain** and **Google Gemini AI** to generate feedback based on quiz results.
 
 ## 🚀 Features
 - **Fetch & Process Quiz Data**: Extract quiz details and student responses from FastAPI endpoints.
 - **RAG-based AI Analysis**: Utilize FAISS vector storage and Gemini AI for retrieval-augmented generation (RAG).
 - **Streamlit Dashboard**: Provide an interactive interface for students to review their performance.
-- **Custom AI Feedback**: Generate detailed explanations for incorrect answers and suggest areas of improvement.
+- **Agentic Ai Feedback**: Provides detailed  Analysis like Strengths,Weakness, Areas of Improvement and Provide Resources using Serper and YoutubeSearchTools for Student  improvement .
 - **Multi-Page Navigation**: Includes AI analysis, study guide, and past performance tracking.
 
 ## 🛠️ Setup Instructions
@@ -38,6 +38,8 @@ The **Student Guider AI** is an intelligent system designed to analyze student q
      ```sh
      GOOGLE_API_KEY=<your_google_api_key>
      FASTAPI_URL=http://localhost:8000
+     SERPER_API_KEY=<your_serper_api_key>
+     YOUTUBE_API_KEY=<your_youtube_api_key>
      ```
 
 ### 🔹 Run the Application
@@ -56,18 +58,20 @@ The **Student Guider AI** is an intelligent system designed to analyze student q
 - The application retrieves quiz questions and student responses from FastAPI (`latestquiz`, `performance`).
 - The data is structured into `quiz_knowledge_base.json` for AI analysis.
 
-### **2️⃣ FAISS Vector Storage for RAG**
+### **2️⃣ FAISS Vector Storage for RAG And AI Analysis with Langchain & Gemini AI **
 - Questions, correct answers, and explanations are embedded using **HuggingFace Sentence Transformers**.
 - FAISS stores these embeddings for efficient similarity searches.
-
-### **3️⃣ AI Analysis with LangChain & Gemini AI**
-- LangChain’s **RetrievalQA** fetches relevant information based on the selected question.
+- - LangChain’s **RetrievalQA** fetches relevant information based on the selected question.
 - **Google Gemini AI** generates explanations and feedback for incorrect answers.
+
+### **3️⃣ CrewAi RAG Agent for Topic Specific Analysis with Gemini AI and CrewAi tools**
+- Crewai **Agent** fetches relevant information of student  and based on the selected data Generate detail suggestions.
+- **Crewai_tools** Helps gather additional Resources related to specific topic and  Recommend  it to student for their improvement .
 
 ### **4️⃣ Interactive UI with Streamlit**
 - **Dashboard (`app.py`)**: Displays past and latest quiz performance.
 - **AI Analysis (`ai_analysis.py`)**: Provides detailed explanations and recommendations.
-- **Study Guide (`guide.py`)**: Helps students learn concepts interactively.
+- **Study Guide (`guide.py`)**: Helps students learn how to overcome their Weakness and Make a room for Improvement .
 
 ## 📷 Screenshots
 Below are key screenshots showcasing the system’s functionalities:
