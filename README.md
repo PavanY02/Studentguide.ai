@@ -86,10 +86,17 @@ Below are key screenshots showcasing the system’s functionalities:
 
 
 ### **Testline Mentor**
-![image](https://github.com/user-attachments/assets/0b9711c1-43be-46b6-8829-9ef5e8630830)
+![image](https://github.com/user-attachments/assets/a99f6a9d-c43e-43a5-bc72-3004f7c9b45f)
+![image](https://github.com/user-attachments/assets/163f8d4a-26a3-4e49-8ce9-96c8dc5d860c)
 
-![image](https://github.com/user-attachments/assets/49af543d-0f8d-4b01-bfe6-c8d0ce0075a0)
-![image](https://github.com/user-attachments/assets/2693bb8a-e71a-497f-838b-66d92eae4a08)
+
+![image](https://github.com/user-attachments/assets/ab30b41a-5c30-434b-96cb-6e18a947143e)
+
+![image](https://github.com/user-attachments/assets/2825a0ec-7a46-42f3-a5bd-08df4a11ce7d)
+
+### **Fast APi END points**
+![image](https://github.com/user-attachments/assets/c4bb7b6c-62f5-444d-bc8b-8ca39b33b2ca)
+
 
 
 
