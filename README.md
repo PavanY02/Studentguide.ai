@@ -77,13 +77,17 @@ The **Student Guider AI** is an intelligent system designed to analyze student q
 Below are key screenshots showcasing the system’s functionalities:
 
 ### **Student Quiz Performance Dashboard**
-![Dashboard](screenshots/dashboard.png)
+![image](https://github.com/user-attachments/assets/85b7ad17-07f6-47a2-9e1a-9010f588a398)
+
+
 
 ### **AI Quiz Analysis**
-![AI Analysis](screenshots/ai_analysis.png)
+![image](https://github.com/user-attachments/assets/0a92fdb1-3589-421e-a8eb-1f5d6149ef1b)
 
-### **AI Study Guide**
-![Study Guide](screenshots/guide.png)
+
+### **Testline Mentor**
+![image](https://github.com/user-attachments/assets/0b9711c1-43be-46b6-8829-9ef5e8630830)
+
 
 ## 🔮 Future Enhancements
 - **Voice-based AI Assistant** for guiding students.
