@@ -3,8 +3,8 @@ import json
 import re
 
 # **API Endpoints**
-QUIZ_API = "https://www.jsonkeeper.com/b/LLQT"  # Replace with actual quiz API URL
-STUDENT_API = "https://api.jsonserve.com/rJvd7g"  # Replace with actual student API URL
+QUIZ_API = "https://www.jsonkeeper.com/b/LLQT"
+STUDENT_API = "https://api.jsonserve.com/rJvd7g"
 
 # **Output JSON File**
 OUTPUT_FILE = "../quiz_knowledge_base.json"
@@ -14,7 +14,7 @@ OUTPUT_FILE = "../quiz_knowledge_base.json"
 def fetch_quiz_data():
     response = requests.get(QUIZ_API)
     if response.status_code == 200:
-        return response.json()["quiz"]["questions"]  # ✅ Extracting only questions
+        return response.json()["quiz"]["questions"]
     else:
         raise Exception("❌ Failed to fetch quiz data")
 
@@ -23,12 +23,12 @@ def fetch_quiz_data():
 def fetch_student_data():
     response = requests.get(STUDENT_API)
     if response.status_code == 200:
-        return response.json()  # ✅ Extracting full student data
+        return response.json()
     else:
         raise Exception("❌ Failed to fetch student data")
 
 
-# **🔹 Clean Text Function (Removes Markdown & Extra Spaces)**
+
 def clean_text(text):
     if text:
         text = re.sub(r'\*\*|\*', '', text)  # ✅ Remove Markdown (**bold** and *italic*)
@@ -36,7 +36,7 @@ def clean_text(text):
     return text
 
 
-# **🔹 Process Data & Create JSON**
+
 def process_quiz_data():
     questions = fetch_quiz_data()
     student_data = fetch_student_data()
@@ -51,7 +51,7 @@ def process_quiz_data():
         question_text = question["description"]
         context = clean_text(question.get("detailed_solution", ""))  # ✅ Cleaned context
 
-        # Finding the Correct Answer
+
         correct_answer = None
         correct_answer_id = None
         all_options = []
@@ -61,19 +61,19 @@ def process_quiz_data():
                 correct_answer = option["description"]
                 correct_answer_id = option["id"]
 
-        # Remove the correct answer from options to keep only incorrect ones
+
         other_options = [opt for opt in all_options if opt != correct_answer]
 
-        # **Check if Student Answered**
+
         student_answered = "Yes" if str(question_id) in response_map else "No"
 
-        # **Check if Student Answer was Correct**
+
         student_selected_answer_id = response_map.get(str(question_id), None)
         was_answer_correct = "No"
         if student_selected_answer_id == correct_answer_id:
             was_answer_correct = "Yes"
 
-        # Append Processed Question
+
         quiz_knowledge_base.append({
             "question_id": question_id,
             "question": question_text,
@@ -81,7 +81,7 @@ def process_quiz_data():
             "answer": correct_answer,
             "student_answered": student_answered,
             "was_answer_correct": was_answer_correct,
-            "other_options": other_options,  # ✅ Added other options
+            "other_options": other_options,
             "context": context
         })
 
@@ -92,6 +92,6 @@ def process_quiz_data():
     print(f"✅ JSON file '{OUTPUT_FILE}' created successfully!")
 
 
-# **🔹 Run the Script**
+
 if __name__ == "__main__":
     process_quiz_data()

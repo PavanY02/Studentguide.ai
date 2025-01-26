@@ -7,7 +7,7 @@ app = FastAPI()
 QUIZ_API = "https://www.jsonkeeper.com/b/LLQT"
 STUDENT_API = "https://api.jsonserve.com/rJvd7g"
 
-# **Fetch Quiz Data**
+
 def fetch_quiz_data():
     response = requests.get(QUIZ_API)
     if response.status_code == 200:
@@ -15,7 +15,7 @@ def fetch_quiz_data():
     else:
         raise HTTPException(status_code=500, detail="❌ Failed to fetch quiz data")
 
-# **Fetch Student Data**
+
 def fetch_student_data():
     response = requests.get(STUDENT_API)
     if response.status_code == 200:
@@ -23,7 +23,7 @@ def fetch_student_data():
     else:
         raise HTTPException(status_code=500, detail="❌ Failed to fetch student data")
 
-# **🔹 Unified API for Quiz & Student Data (Without Extra Details)**
+
 
 def get_full_quiz_data():
     quiz_data = fetch_quiz_data()
