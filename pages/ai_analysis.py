@@ -77,7 +77,7 @@ prompt_template = PromptTemplate(
     Context: {context}
 
     Based on the given context, provide an explanation.
-    If the student's answer was incorrect, explain why.
+    
     """
 )
 
