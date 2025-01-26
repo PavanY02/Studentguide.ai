@@ -88,6 +88,10 @@ Below are key screenshots showcasing the system’s functionalities:
 ### **Testline Mentor**
 ![image](https://github.com/user-attachments/assets/0b9711c1-43be-46b6-8829-9ef5e8630830)
 
+![image](https://github.com/user-attachments/assets/49af543d-0f8d-4b01-bfe6-c8d0ce0075a0)
+![image](https://github.com/user-attachments/assets/2693bb8a-e71a-497f-838b-66d92eae4a08)
+
+
 
 ## 🔮 Future Enhancements
 - **Voice-based AI Assistant** for guiding students.
