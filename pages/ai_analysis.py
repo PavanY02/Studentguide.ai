@@ -87,14 +87,14 @@ qa_chain = RetrievalQA.from_chain_type(
     chain_type_kwargs={"prompt": prompt_template}
 )
 
-st.title("🤖 AI-Powered Quiz Insights")
+st.title("🤖 AI Quiz Insights")
 st.subheader(f"📌 Quiz Analysis for {student_id}")
 st.write(f"📖 **Quiz Title**: {quiz_title}")
 st.write(f"📖 **Topic**: {quiz_topic}")
 st.write(f"📅 **Date**: {quiz_date}")
 st.write(f"🎯 **Final Score**: {final_score}")
 
-st.subheader("🔍 AI-Powered Quiz Insights")
+st.subheader("🔍 AI- Quiz Insights")
 
 questions_list = [q["question"] for q in quiz_data["quiz_questions"]]
 selected_question = st.selectbox("📌 Select a Question for Analysis:", questions_list)
@@ -102,14 +102,14 @@ selected_question = st.selectbox("📌 Select a Question for Analysis:", questio
 if selected_question:
     selected_question_data = next(q for q in quiz_data["quiz_questions"] if q["question"] == selected_question)
 
-    # ✅ Fetch values **exactly as they are**
+
     student_answered = selected_question_data.get("student_answered", "Unknown")
     was_correct = selected_question_data.get("was_answer_correct", "Unknown")
     student_answer = selected_question_data.get("student_answer", "No Answer")
     correct_answer = selected_question_data.get("answer", "Unknown")
     other_options = ", ".join(selected_question_data.get("other_options", []))
 
-    # ✅ Display Data As It Is
+
     st.markdown(f"✅ **Correct Answer:** {correct_answer}")
     st.markdown(f"🎯 **Did the Student Answer?** {student_answered}")
     st.markdown(f"🎯 **Was Student Correct?** {was_correct}")

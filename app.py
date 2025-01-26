@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from config import FASTAPI_URL
 from tools.data_fetcher import fetch_quiz_data
 
-# 🔹 Fetch Past Quiz Data from FastAPI
+
 @st.cache_data
 def fetch_quiz_performance():
     response = requests.get(f"{FASTAPI_URL}/performance")
@@ -16,7 +16,6 @@ def fetch_quiz_performance():
         st.error("❌ Failed to fetch past quiz performance from API")
         return None
 
-# 🔹 Fetch Latest Quiz Data from FastAPI
 @st.cache_data
 def fetch_latest_quiz():
     response = requests.get(f"{FASTAPI_URL}/latestquiz")
@@ -26,10 +25,10 @@ def fetch_latest_quiz():
         st.error("❌ Failed to fetch latest quiz data from API")
         return None
 
-# 🔹 Streamlit UI
+
 st.title("📊 Student Quiz Performance Dashboard")
 
-# 🔹 Sidebar: Topic Selection (Moved Up)
+
 st.sidebar.header("🔍 Choose a Topic")
 data = fetch_quiz_performance()
 if data:
@@ -40,12 +39,12 @@ if data:
     selected_quiz = st.sidebar.selectbox("Choose a Topic:", unique_topics)
     st.session_state["selected_topic"] = selected_quiz.split(" - ")[0]
 
-# 🔹 Sidebar: Study Guidance Section (Below Topic Selection)
-st.sidebar.markdown("---")
-st.sidebar.subheader("💬 Need Study Guidance?")
-st.sidebar.page_link("pages/guide.py", label="🔹 Talk to AI Guide →")
 
-# 🔹 Sidebar: Latest Quiz Results (Now Below Study Guidance)
+st.sidebar.markdown("---")
+st.sidebar.subheader("💬 Need mentoring?")
+st.sidebar.page_link("pages/guide.py", label="🔹 Talk to Your Testline Mentor →")
+
+
 st.sidebar.markdown("---")
 st.sidebar.subheader("📌 Latest Quiz Results")
 
@@ -61,14 +60,14 @@ if latest_quiz_data:
     st.sidebar.text(f"❌ Incorrect: {student['incorrect_answers']}")
     st.sidebar.text(f"📊 Accuracy: {student['accuracy']}%")
 
-    # 🔹 "AI Analysis" Button
+
     if st.sidebar.button("🔍 AI Analysis"):
         st.switch_page("pages/ai_analysis.py")
 
 else:
     st.sidebar.warning("🚨 No recent quiz results available.")
 
-# 🔹 Display Past Quiz Performance Data
+
 if data:
     df_selected = df[df["topic_title"] == selected_quiz]
 
@@ -83,11 +82,11 @@ if data:
     col5.metric("📌 Attempt Rate", f"{df_selected['attempt_rate'].values[0]:.2f} %")
     col6.metric("📌 Net Score", f"{df_selected['net_score'].values[0]:.2f}")
 
-    # 🔹 Display Quiz Performance Table
+
     st.subheader("📋 Quiz Performance Details")
     st.dataframe(df_selected)
 
-    # 🔹 **Charts**
+
     st.subheader("📊 Accuracy vs. Attempt Rate")
     fig, ax = plt.subplots(figsize=(6, 4))
     bars = ax.bar(["Accuracy Rate", "Attempt Rate"],
