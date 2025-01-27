@@ -103,11 +103,9 @@ Below are key screenshots showcasing the system’s functionalities:
 ## 🔮 Future Enhancements
 - **Voice-based AI Assistant** for guiding students.
 - **Personalized Study Plan** generation.
-- **Integration with Learning Management Systems (LMS)**.
 
-## 🤝 Contributing
-Pull requests are welcome! Please ensure your code follows best practices and includes documentation.
 
-## 📜 License
-This project is licensed under the MIT License.
+
+
+
 
