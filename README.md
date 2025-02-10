@@ -21,7 +21,7 @@ The **Student Guider AI** is an intelligent system designed to analyze student q
 1. **Clone the Repository**
    ```sh
    git clone <repo_url>
-   cd studentguide_ai
+   cd studentguide.ai
    ```
 2. **Create a Virtual Environment**
    ```sh
